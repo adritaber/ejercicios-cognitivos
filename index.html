@@ -1,68 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicios Cognitivos</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
       margin: 0;
       padding: 2rem;
-      background-color: #f9f9f9;
     }
     h1 {
       text-align: center;
-      color: #333;
+      margin-bottom: 2rem;
     }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .card {
-      background-color: white;
-      border-radius: 12px;
+    .ejercicio {
+      background: white;
+      border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 350px;
-      padding: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .card h2 {
-      font-size: 1.2rem;
-      color: #222;
-      margin-bottom: 0.5rem;
+    .ejercicio h2 {
+      margin-top: 0;
     }
-    .card iframe {
-      width: 100%;
-      height: 280px;
-      border: none;
-      border-radius: 6px;
+    .pregunta {
+      margin: 1rem 0;
     }
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
+    .respuesta {
+      background: #eaf7ea;
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.25rem;
+      display: none;
+    }
+    button {
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
     }
   </style>
+  <script>
+    function mostrarRespuesta(id) {
+      const r = document.getElementById(id);
+      r.style.display = r.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <h1>Ejercicios de Estimulación Cognitiva</h1>
-  <div class="grid">
-    <div class="card">
-      <h2>Refranes</h2>
-      <p>Completa refranes populares.</p>
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS5ckoZM4tbW71dygmDsjdN1Y4tXM8IAza3ms28jsncZct4Ad0mpXqMesA5tbdHpQ/pub?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+
+  <div class="ejercicio">
+    <h2>Refranes</h2>
+    <div class="pregunta">
+      <strong>1.</strong> A quien madruga...
+      <br>
+      <button onclick="mostrarRespuesta('r1')">Mostrar respuesta</button>
+      <div class="respuesta" id="r1">Dios le ayuda.</div>
     </div>
-    <div class="card">
-      <h2>Pasapalabra</h2>
-      <p>Adivina palabras según definiciones tipo rosco.</p>
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQlf3hI5Fxr_Y4_1lz_1XtCL-XGUryzmUJGbsqyojDQdu01Od3-1Qlqv8fEcefs5g/pub?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
-    </div>
-    <div class="card">
-      <h2>Trivial</h2>
-      <p>Responde preguntas de cultura general con opciones.</p>
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vShd6vl0Yk9ZKa6D3cT1kOuy6j3k-GQoHyemVEykOC-qN7vcfOXA8d9vKyElpYfYQ/pub?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+    <div class="pregunta">
+      <strong>2.</strong> No por mucho madrugar...
+      <br>
+      <button onclick="mostrarRespuesta('r2')">Mostrar respuesta</button>
+      <div class="respuesta" id="r2">Amanece más temprano.</div>
     </div>
   </div>
+
+  <div class="ejercicio">
+    <h2>Pasapalabra</h2>
+    <div class="pregunta">
+      <strong>Letra C:</strong> Se usa para escribir o dibujar (empieza por C).
+      <br>
+      <button onclick="mostrarRespuesta('p1')">Mostrar respuesta</button>
+      <div class="respuesta" id="p1">Crayón.</div>
+    </div>
+    <div class="pregunta">
+      <strong>Letra R:</strong> Vehículo con dos ruedas (empieza por R).
+      <br>
+      <button onclick="mostrarRespuesta('p2')">Mostrar respuesta</button>
+      <div class="respuesta" id="p2">Rueda.</div>
+    </div>
+  </div>
+
+  <div class="ejercicio">
+    <h2>Trivial</h2>
+    <div class="pregunta">
+      <strong>¿Cuál es la capital de Francia?</strong>
+      <br>
+      <button onclick="mostrarRespuesta('t1')">Mostrar respuesta</button>
+      <div class="respuesta" id="t1">París.</div>
+    </div>
+    <div class="pregunta">
+      <strong>¿Qué planeta es conocido como el planeta rojo?</strong>
+      <br>
+      <button onclick="mostrarRespuesta('t2')">Mostrar respuesta</button>
+      <div class="respuesta" id="t2">Marte.</div>
+    </div>
+  </div>
+
 </body>
 </html>
+
